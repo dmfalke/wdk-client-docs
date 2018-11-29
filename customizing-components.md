@@ -29,7 +29,7 @@ The underlying idea is that the components defined in WDK declare an interface (
 
 ### Replace Component
 
-```javascript
+```jsx
 Wdk.Components.Record.wrapComponent(function(Record) {
   return function CustomRecord(props) {
     return (
@@ -42,7 +42,7 @@ Wdk.Components.Record.wrapComponent(function(Record) {
 
 ### Before Component
 
-```javascript
+```jsx
 Wdk.Components.Record.wrapComponent(function(Record) {
   return function BeforeRecord(props) {
     return (
@@ -58,7 +58,7 @@ Wdk.Components.Record.wrapComponent(function(Record) {
 
 ### After Component
 
-```javascript
+```jsx
 Wdk.Components.Record.wrapComponent(function(Record) {
   return function AfterRecord(props) {
     return (
@@ -74,7 +74,7 @@ Wdk.Components.Record.wrapComponent(function(Record) {
 
 ### Around Component
 
-```javascript
+```jsx
 Wdk.Components.Record.wrapComponent(function(Record) {
   return function AroundRecord(props) {
     return (
@@ -91,7 +91,7 @@ Wdk.Components.Record.wrapComponent(function(Record) {
 
 _This is probably an anti pattern and WDK will hopefully provide better ways to do this in the Model XML._
 
-```javascript
+```jsx
 Wdk.Components.Record.wrapComponent(function(Record) {
   return function PropsModifier (props) {
     let newProps = Object.assign({}, props, {
