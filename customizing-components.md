@@ -29,7 +29,7 @@ The underlying idea is that the components defined in WDK declare an interface (
 
 ### Replace Component
 
-```javascript.jsx
+```javascript
 Wdk.Components.Record.wrapComponent(function(Record) {
   return function CustomRecord(props) {
     return (
