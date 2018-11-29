@@ -8,10 +8,11 @@ WDK React Components are available via the global JavaScript object `Wdk.Compone
 
 The `wrapComponent` method takes a `ComponentFactory` function as its sole argument. The `ComponentFactory` should return a React Component that will be used instead of the original Component. The `ComponentFactory` will be called with the original Component as its sole argument.
 
-[source,typescript]
+```typescript
 interface ComponentFactory<Props> {
   (TargetComponent: React.ComponentType<Props>): React.ComponentType<Props>
 } 
+```
 
 The Component that is returned by the `ComponentFactory` will be passed the same props as the original Component. Keep in mind that the Component passed to `ComponentFactory` can be any valid React Component type (class, function, etc).
 
@@ -28,7 +29,7 @@ The underlying idea is that the components defined in WDK declare an interface (
 
 === Replace Component ===
 
-[source,javascript]
+```javascript
 Wdk.Components.Record.wrapComponent(function(Record) {
   return function CustomRecord(props) {
     return (
@@ -36,11 +37,12 @@ Wdk.Components.Record.wrapComponent(function(Record) {
     )
   };
 });
+```
 
 
 === Before Component ===
 
-[source,javascript]
+```javascript
 Wdk.Components.Record.wrapComponent(function(Record) {
   return function BeforeRecord(props) {
     return (
@@ -51,11 +53,12 @@ Wdk.Components.Record.wrapComponent(function(Record) {
     );
   };
 });
+```
 
 
 === After Component ===
 
-[source,javascript]
+```javascript
 Wdk.Components.Record.wrapComponent(function(Record) {
   return function AfterRecord(props) {
     return (
@@ -66,11 +69,12 @@ Wdk.Components.Record.wrapComponent(function(Record) {
     );
   };
 });
+```
 
 
 === Around Component ===
 
-[source,javascript]
+```javascript
 Wdk.Components.Record.wrapComponent(function(Record) {
   return function AroundRecord(props) {
     return (
@@ -80,13 +84,14 @@ Wdk.Components.Record.wrapComponent(function(Record) {
     );
   };
 });
+```
 
 
 === Modify Props ===
 
 _This is probably an anti pattern and WDK will hopefully provide better ways to do this in the Model XML._
 
-[source,javascript]
+```javascript
 Wdk.Components.Record.wrapComponent(function(Record) {
   return function PropsModifier (props) {
     let newProps = Object.assign({}, props, {
@@ -97,4 +102,4 @@ Wdk.Components.Record.wrapComponent(function(Record) {
     );
   };
 });
-
+```
