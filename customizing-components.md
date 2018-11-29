@@ -2,7 +2,7 @@
 title: Customizing Wdk Components
 ---
 
-== Background ==
+## Background
 
 WDK React Components are available via the global JavaScript object `Wdk.Components`, or ES named imports (`import { Record } from 'wdk-client/Components'`). Each Component has a static method `wrapComponent` that can be used to modify the default Component.
 
@@ -19,15 +19,15 @@ The Component that is returned by the `ComponentFactory` will be passed the same
 This API allows for many different types of modifications, including:
 
 * Wholesale replacement
-* https://en.wikipedia.org/wiki/Advice_(programming)[Programming with advise]
+* [Programming with advise](https://en.wikipedia.org/wiki/Advice_(programming))
 * Injecting/modifying props
 * etc.
 
 The underlying idea is that the components defined in WDK declare an interface (via Props) that consumers can rely upon. Eventually, WDK will generate documentation based on Props and comments. This can then be used as a guide for expectations when wrapping components.
 
-== Examples ==
+## Examples
 
-=== Replace Component ===
+### Replace Component
 
 ```javascript
 Wdk.Components.Record.wrapComponent(function(Record) {
@@ -40,7 +40,7 @@ Wdk.Components.Record.wrapComponent(function(Record) {
 ```
 
 
-=== Before Component ===
+### Before Component
 
 ```javascript
 Wdk.Components.Record.wrapComponent(function(Record) {
@@ -56,7 +56,7 @@ Wdk.Components.Record.wrapComponent(function(Record) {
 ```
 
 
-=== After Component ===
+### After Component
 
 ```javascript
 Wdk.Components.Record.wrapComponent(function(Record) {
@@ -72,7 +72,7 @@ Wdk.Components.Record.wrapComponent(function(Record) {
 ```
 
 
-=== Around Component ===
+### Around Component
 
 ```javascript
 Wdk.Components.Record.wrapComponent(function(Record) {
@@ -87,7 +87,7 @@ Wdk.Components.Record.wrapComponent(function(Record) {
 ```
 
 
-=== Modify Props ===
+### Modify Props
 
 _This is probably an anti pattern and WDK will hopefully provide better ways to do this in the Model XML._
 
