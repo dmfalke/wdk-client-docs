@@ -1,3 +1,7 @@
+---
+title: Customizing Wdk Components
+---
+
 == Background ==
 
 WDK React Components are available via the global JavaScript object `Wdk.Components`, or ES named imports (`import { Record } from 'wdk-client/Components'`). Each Component has a static method `wrapComponent` that can be used to modify the default Component.
